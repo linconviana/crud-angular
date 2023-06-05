@@ -21,7 +21,8 @@ export class HomeComponent  implements OnInit{
       {name:'Home', path:'/'},
       {name:'Cadastro', path:'/cadastro'},
       {name:'Listagem', path:'/listagem'},
-      {name:'Graficos', path:'/chart'}
+      {name:'Graficos Chart', path:'/chart'},
+      {name:'Graficos ApexChart', path:'/apexchart'}
     ];
 
     this.formulario = this.formBuilder.group({

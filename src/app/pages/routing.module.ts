@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ListagemComponent } from './listagem/listagem.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ChartComponent } from './chart/chart.component';
+import { ApexChartComponent } from './apex-chart/apex-chart.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'chart',
     component: ChartComponent
+  },
+  {
+    path: 'apexchart',
+    component: ApexChartComponent
   }
 ];
 

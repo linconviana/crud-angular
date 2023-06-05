@@ -8,6 +8,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { SearchComponent } from '../shared/search/search.component';
 import { PaginationComponent } from '../shared/pagination/pagination.component';
 import { ChartComponent } from './chart/chart.component';
+import { ApexChartComponent } from './apex-chart/apex-chart.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import { ChartComponent } from './chart/chart.component';
     CadastroComponent,
     SearchComponent,
     PaginationComponent,
-    ChartComponent
+    ChartComponent,
+    ApexChartComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     RoutingModule,
+    NgApexchartsModule
   ]
 })
 export class PagesModule { }

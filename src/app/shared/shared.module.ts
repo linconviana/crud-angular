@@ -1,0 +1,24 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { ListagemComponent } from '../pages/listagem/listagem.component';
+import { SearchComponent } from './search/search.component';
+import { PaginationComponent } from './pagination/pagination.component';
+
+
+
+@NgModule({
+  declarations: [
+    ListagemComponent,
+    SearchComponent,
+  ],
+  exports: [
+    ListagemComponent,
+    SearchComponent,
+  ],
+  imports: [
+    CommonModule,
+    RouterModule
+  ]
+})
+export class SharedModule { }

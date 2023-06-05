@@ -1,0 +1,12 @@
+
+<nav aria-label="Page navigation example" *ngIf="getPageable">
+    <ul class="pagination">
+      <li [ngClass]="getPageable.first ? 'page-item disabled' : 'page-item' " >
+        <button class="page-link" (click)="updatePage(getPageable.number - 1)">Previous</button>
+      </li>
+      <li class="page-item"><span class="page-link">{{getPageable.number + 1}}</span></li>
+      <li [ngClass]="getPageable.last ? 'page-item disabled' : 'page-item' ">
+        <button class="page-link" (click)="updatePage(getPageable.number + 1)">Next</button>
+      </li>
+    </ul>
+  </nav>

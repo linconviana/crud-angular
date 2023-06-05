@@ -1,0 +1,75 @@
+<div class="col-md-6 offset-3 mt-3">
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div>
+                <label class="form-label label-razaoSocial" for="">Razão Social</label>
+                <input class="form-control input-razaoSocial" type="text" formControlName="razaoSocial" 
+                    placeholder="Digite seu nome...." (blur)="validar('razaoSocial')">
+                <div class="error-input-razaoSocial error-hidden error-message">Campo obrigatorio, mínimo de 5 caracteres!</div>
+            </div>
+            <div>
+                <label class="form-label label-email" for="">E-mail</label>
+                <input class="form-control input-email" type="text" formControlName="email" 
+                    placeholder="Digite seu email...." (blur)="validar('email')">
+                <div class="error-input-email error-hidden error-message">Campo obrigatorio ou e-mail no formato inválido!</div>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" for="">CNPJ:</label>
+                <input class="form-control" type="text" formControlName="cnpj" placeholder="Digite seu cpf....">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label label-cep" for="">Cep:</label>
+                <input class="form-control input-cep" type="text" formControlName="cep" placeholder="Digite seu cep...." (blur)="consultaCep()">
+                <div class="error-input-cep error-hidden error-message">Campo obrigatorio, mínimo de 8 caracteres!</div>
+            </div>
+            <div>
+                <label class="form-label" for="">Rua:</label>
+                <input class="form-control" type="text" formControlName="logradouro" placeholder="Digite seu rua....">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" for="">Bairro:</label>
+                <input class="form-control" type="text" formControlName="bairro" placeholder="Digite seu rua....">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label" for="">Cidade:</label>
+                <input class="form-control" type="text" formControlName="cidade" placeholder="Digite seu rua....">
+            </div>
+            <div>
+                <label class="form-label" for="">UF:</label>
+                <select class="select-size form-select" ng-model="estado.sigla" formControlName="estado" style="width: 200px;">
+                    <option *ngFor="let estado of estados" [value]="estado.sigla">{{estado.name}}</option>
+                </select>
+            </div>
+            <div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault1" checked (click)="changeRadio('masculino')">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Masculino
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sexo" id="flexRadioDefault2" (click)="changeRadio('feminino')">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Feminino
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" formControlName="notificacao">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Receber notificação por e-mail
+                    </label>
+                </div>
+            </div>
+            <div class="mt-3">
+                <!--[disabled]="!formulario.valid" verificar se o formulario esta validado e bloquear botão-->
+                <button 
+                    [ngClass]="btnText === 'Salvar' ? 'btn btn-primary' : 'btn btn-warning' " 
+                    type="submit">
+                        {{btnText}}
+                </button>
+                <button class="btn btn-danger" (click)="resetarForm()">Cancelar</button>
+                <a [routerLink]="['/listagem']" style="margin-right: 18%;"><button class="btn btn-secondary">Voltar</button></a>
+            </div>
+        </div>
+    </form>
+</div>

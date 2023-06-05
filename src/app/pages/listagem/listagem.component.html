@@ -1,0 +1,36 @@
+<div class="col-md-6 offset-3 mt-3">
+  <div style="display: flex; justify-content: space-between;">
+    <a [routerLink]="['/cadastro']"><button class="btn btn-primary">Cadastrar</button></a>
+    <a [routerLink]="['/']" style="margin-right: 18%;"><button class="btn btn-secondary">Voltar</button></a>
+    <app-search (emitSearch)="getSearch($event)"></app-search>
+  </div>
+  
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Empresa</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">CNPJ</th>
+          <th scope="col">Ação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let empresa of getEmpresas">
+          <th scope="row">{{empresa.id}}</th>
+          <td>{{empresa.razaoSocial}}</td>
+          <td>{{empresa.email}}</td>
+          <td>{{empresa.cnpj}}</td>
+          <td style="display: flex; justify-content: space-between;">
+              <a [routerLink]="['/update', empresa.id]"><button class="btn btn-warning">Atualizar</button></a>
+              <button class="btn btn-danger" (click)="deletarEmpresa(empresa.id)">Deletar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div>
+      <app-pagination [getPageable]="pageableEmpresa" (emitPagination)="getPagination($event)"></app-pagination>
+    </div>
+</div>
+

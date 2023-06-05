@@ -1,0 +1,6 @@
+<form [formGroup]="formulario" style="display: flex; width: 400px;">
+    <input class="form-control" type="text" #input (keyup)="search(input.value)" placeholder="Buscar Empresas..." style="margin-right: 2%;">
+    <select class="select-size form-select" ng-model="paginas" (change)="onChange()" formControlName="size" style="width: 100px;">
+        <option *ngFor="let registro of registros" [value]="registro.size">{{registro.name}}</option>
+    </select>
+</form>

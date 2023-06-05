@@ -1,0 +1,6 @@
+<p>Home</p>
+<form [formGroup]="formulario" >
+    <select class="form-select" ng-model="paginas" (change)="onChange()" formControlName="pagina">
+        <option *ngFor="let pagina of paginas" [value]="pagina.path">{{pagina.name}}</option>
+    </select>
+</form>

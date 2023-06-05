@@ -1,0 +1,79 @@
+pockdex
+
+Atualizar nodejs 18 ou superior
+nvm install node
+
+Atualizar npm 9.6.6 ou superior
+npm install npm@latest –g
+
+node -v
+npm -v
+yarn -v
+
+ver versão do angular
+ng --version
+
+
+instalar o angular
+npm install -g @angular/cli
+npm install -g @angular/cli
+
+instalar bootstrap no angular
+npm install bootstrap@3.3.7
+npm install bootstrap
+
+"styles": [
+  "node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "styles.scss"
+]
+
+ou
+
+
+
+projeto angular pokemon
+https://www.youtube.com/watch?v=UhOcUII_5PU
+
+/// :: teste unitarios
+https://www.youtube.com/watch?v=NrT0WbIU8jk
+
+2:16:15 min continuar
+
+ng new my-app
+ng serve  ou  ng serve --o  ou  ng s -o  ou npm start
+
+/// :: Criar um modulo
+ng g m pages
+
+/// :: Criar um componente
+ng g c ./pages/home
+
+ng g c --module pages pages/details
+ng g c --module pages pages/chart
+
+***ng g component component-name --skip-import***
+
+/// :: Criar um modulo
+ng g m shared
+
+/// :: Criar um componente
+ng g c ./shared/poke-header
+ng g c ./shared/poke-search
+ng g c ./shared/poke-list
+
+
+/// :: Criar um serviço
+ng g s service/pokeApi
+
+
+/// :: animações css
+https://www.theappguruz.com/tag-tools/web/CSSAnimations/
+
+
+
+//// novo tutorial angular pokemon
+https://www.youtube.com/watch?v=jbrD2lzMtVw
+
+continuar 40min
+
+<!--src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1.png" -->

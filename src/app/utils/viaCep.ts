@@ -1,5 +1,6 @@
 import { FormGroup } from "@angular/forms";
 import { ServiceService } from 'src/app/services/service.service';
+import { validarFormulario } from "./validaFormulario";
 
 
 export const getConsultaCep = (formulario: FormGroup, service: ServiceService) => {
@@ -14,13 +15,21 @@ export const getConsultaCep = (formulario: FormGroup, service: ServiceService) =
 
       if(validaCep.test(cep)){
 
+        //validarFormulario(formulario);
+        
         resetDadosForm(formulario);
 
         const url = `https://viacep.com.br/ws/${cep}/json/`;
         service.get(url)
         .subscribe(data => populaDadosForm(data, formulario));
       }
+      else{  
+        formulario.patchValue({ cep: null });
+        resetDadosForm(formulario);
+      }
     }
+    else
+      resetDadosForm(formulario);
 }
 
 const resetDadosForm = (formulario: FormGroup) =>{

@@ -15,7 +15,7 @@
             </div>
             <div class="col-md-6">
                 <label class="form-label" for="">CNPJ:</label>
-                <input class="form-control" type="text" formControlName="cnpj" placeholder="Digite seu cpf....">
+                <input class="form-control" type="text" formControlName="cnpj" placeholder="Digite seu cnpj....">
             </div>
             <div class="col-md-6">
                 <label class="form-label label-cep" for="">Cep:</label>
@@ -37,7 +37,8 @@
             <div>
                 <label class="form-label" for="">UF:</label>
                 <select class="select-size form-select" ng-model="estado.sigla" formControlName="estado" style="width: 200px;">
-                    <option *ngFor="let estado of estados" [value]="estado.sigla">{{estado.name}}</option>
+                    <option *ngFor="let estado of estados" [value]="estado.sigla">{{estado.sigla}}</option>
+                    <!--<option *ngFor="let estado of estados" [value]="estado.sigla">{{estado.name}}</option>-->
                 </select>
             </div>
             <div>

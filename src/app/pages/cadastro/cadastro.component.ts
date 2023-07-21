@@ -209,4 +209,30 @@ export class CadastroComponent implements OnInit{
       }
     })
   }*/
+
+  /// :: https://www.youtube.com/watch?v=53S4LlPLwrI
+  /// :: https://pt.stackoverflow.com/questions/425339/mascara-cpf-cnpj-angular-8-ng-mask
+  /// :: https://github.com/frontendbr/forum/issues/1569
+  /// :: https://github.com/JsDaddy/ngx-mask
+  /// :: https://jsdaddy.github.io/ngx-mask/#4
+  /// :: npm install --save ngx-mask
+
+  /// :: https://www.npmjs.com/package/angular-input-masks
+  /// :: https://www.youtube.com/watch?v=kKk1WurbyVs&t=32s
+  /// :: https://github.com/assisrafael/angular-input-masks
+  /// :: https://github.com/renato/bower-angular-locale-pt-br
+  /// :: npm install --save angular-input-masks
+  /// :: https://assisrafael.github.io/angular-input-masks/
+
+  /// :: https://www.youtube.com/watch?v=Ncw_tMn64Iw
+  isCPF(): boolean{
+    debugger
+    let cnpj = this.formulario.get('cnpj').value;
+    return cnpj == null ? true : cnpj.length < 12 ? true : false;
+  }
+ 
+  public getCpfCnpjMask(): string{
+    debugger
+    return this.isCPF() ? '000.000.000-009' : '00.000.000/0000-00';
+  }
 }

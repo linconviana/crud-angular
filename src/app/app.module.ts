@@ -8,7 +8,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ServiceService } from './services/service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PagesModule } from './pages/pages.module';
-import { SearchComponent } from './shared/search/search.component';
+
+//import { NgxMaskModule }  from 'ngx-mask';
+//import { NgxMaskDirective, NgxMaskPipe, provideNgxMask }  from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,13 @@ import { SearchComponent } from './shared/search/search.component';
     PagesModule, 
    /// :: Add o HttpClientModule para requisições com webApi    
    HttpClientModule,
+   //NgxMaskDirective, NgxMaskPipe
+   ///NgxMaskModule.forRoot()
   ],
   providers: [
     /// :: Precisa add os services da aplicação
     ServiceService,
+    //provideNgxMask()
   ],
   bootstrap: [AppComponent]
 })

@@ -29,7 +29,10 @@ npm install bootstrap
 
 ou
 
-
+instalar mascaras com ngx mask
+npm install --save ngx-mask 
+ "ngx-mask": "^11.1.4",
+ "ngx-mask": "^16.2.4",
 
 projeto angular pokemon
 https://www.youtube.com/watch?v=UhOcUII_5PU

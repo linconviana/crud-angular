@@ -42,10 +42,11 @@ const resetDadosForm = (formulario: FormGroup) =>{
 }
 
 const populaDadosForm = (cepDados: any, formulario: FormGroup) =>{
-
+debugger
     formulario.patchValue({
       logradouro: cepDados.logradouro,
       bairro: cepDados.bairro,
       cidade: cepDados.localidade,
+      estado: cepDados.uf
     })
 }
